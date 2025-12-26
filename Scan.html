@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HACKED</title>
+    <link rel="icon" href="https://i.imgur.com/IkAfcSM.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            min-height: 100vh;
+            overflow: hidden;
+            cursor: none;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,0,0,0.02) 2px, rgba(255,0,0,0.02) 4px),
+                linear-gradient(90deg, rgba(0,0,0,0.01), transparent 50%, rgba(0,0,0,0.01));
+            pointer-events: none;
+            z-index: 10;
+            animation: noise 0.4s steps(8) infinite;
+        }
+        @keyframes noise { 0% { transform: translate(0,0); } 100% { transform: translate(2px,2px); } }
+
+        .hacked-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .hacked-by {
+            font-size: clamp(4rem, 12vw, 8rem);
+            font-weight: 900;
+            color: #ff0000;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 1.5vh;
+            text-shadow: 0 0 30px #ff0000, 0 0 60px #ff0000;
+            animation: glitchSmooth 8s infinite linear;
+        }
+        @keyframes glitchSmooth {
+            0%, 100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); text-shadow: 0 0 30px #ff0000; }
+            2% { clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 30%); text-shadow: 0 0 40px #00ff00; transform: translate(-2px,1px); }
+            4% { clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0% 100%); text-shadow: 0 0 40px #0000ff; transform: translate(2px,-1px); }
+            6% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); text-shadow: 0 0 30px #ff0000; transform: translate(0); }
+        }
+
+        .hacker-name {
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            color: #00ff00;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 3vh;
+            text-shadow: 0 0 20px #00ff00;
+            animation: pulseGlow 2.5s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { text-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00; }
+            50% { text-shadow: 0 0 40px #00ff00, 0 0 80px #00ff00, 0 0 120px #00ff00; }
+        }
+
+        .message {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: #ff4444;
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 15px #ff4444;
+        }
+
+        .small-messages {
+            position: fixed;
+            bottom: 5vh;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            z-index: 2;
+        }
+        .small-message {
+            font-size: clamp(0.8rem, 1.8vw, 1.2rem);
+            color: #ff6666;
+            margin: 0.5vh 0;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .small-message.active { opacity: 0.8; }
+
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            width: 40px;
+            height: 40px;
+            left: 0;
+            top: 0;
+            transition: transform 0.05s ease-out;
+        }
+        .cursor-crosshair {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #ff0000;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #ff0000, inset 0 0 10px #ff0000;
+        }
+        .cursor-crosshair:before, .cursor-crosshair:after {
+            content: '';
+            position: absolute;
+            background: #ff0000;
+            box-shadow: 0 0 10px #ff0000;
+        }
+        .cursor-crosshair:before { width: 2px; height: 40px; left: 19px; top: 0; }
+        .cursor-crosshair:after { width: 40px; height: 2px; left: 0; top: 19px; }
+        .cursor-center {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #ff0000;
+            border-radius: 50%;
+            left: 16px;
+            top: 16px;
+            box-shadow: 0 0 15px #ff0000;
+        }
+
+        .scan-line {
+            position: fixed;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff0000, transparent);
+            box-shadow: 0 0 20px #ff0000;
+            z-index: 999;
+            animation: scanSmooth 5s linear infinite;
+        }
+        @keyframes scanSmooth {
+            0% { top: -3px; opacity: 0; }
+            10%, 90% { opacity: 1; }
+            100% { top: 100vh; opacity: 0; }
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: #ff0000;
+            z-index: 9998;
+            opacity: 0;
+            pointer-events: none;
+            animation: flickerSmooth 6s infinite;
+        }
+        @keyframes flickerSmooth {
+            0%, 100% { opacity: 0; }
+            1% { opacity: 0.03; }
+            2% { opacity: 0; }
+            98% { opacity: 0; }
+            99% { opacity: 0.02; }
+        }
+
+        .border-flash {
+            position: fixed;
+            inset: 0;
+            border: 10px solid transparent;
+            box-sizing: border-box;
+            z-index: 9997;
+            pointer-events: none;
+            animation: borderFlashSmooth 10s infinite;
+        }
+        @keyframes borderFlashSmooth {
+            0%, 100% { border-color: transparent; }
+            5% { border-color: rgba(255, 0, 0, 0.2); }
+            10% { border-color: transparent; }
+        }
+
+        .matrix-rain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.15;
+        }
+    </style>
+</head>
+<body>
+    <div class="scan-line"></div>
+    <div class="border-flash"></div>
+    <div class="matrix-rain" id="matrixRain"></div>
+
+    <div class="hacked-container">
+        <div class="hacked-by">HACKED</div>
+        <div class="hacker-name">BY XXX_XXX</div>
+        <div class="message">SYSTEM COMPROMISED</div>
+    </div>
+
+    <div class="small-messages" id="smallMessages">
+        <div class="small-message active">ACCESS: UNAUTHORIZED</div>
+        <div class="small-message">SECURITY: BREACHED</div>
+        <div class="small-message">DEFENSES: PENETRATED</div>
+    </div>
+
+    <div class="custom-cursor" id="customCursor">
+        <div class="cursor-crosshair"></div>
+        <div class="cursor-center"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const customCursor = document.getElementById('customCursor');
+            const matrixRain = document.getElementById('matrixRain');
+            const smallMessagesContainer = document.getElementById('smallMessages');
+            const smallMessageElements = smallMessagesContainer.querySelectorAll('.small-message');
+
+            let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+            function updateCursor() {
+                cursorX += (mouseX - cursorX) * 0.2;
+                cursorY += (mouseY - cursorY) * 0.2;
+                customCursor.style.transform = `translate(${cursorX - 20}px, ${cursorY - 20}px)`;
+                requestAnimationFrame(updateCursor);
+            }
+            updateCursor();
+
+            const canvas = document.createElement('canvas');
+            canvas.style.position = 'absolute';
+            canvas.style.inset = '0';
+            matrixRain.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            const fontSize = 16;
+            const columns = Math.floor(canvas.width / fontSize);
+            const drops = Array(columns).fill(1);
+            function drawMatrix() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#00ff00';
+                ctx.font = `${fontSize}px monospace`;
+                drops.forEach((y, x) => {
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(text, x * fontSize, y * fontSize);
+                    if (y * fontSize > canvas.height && Math.random() > 0.975) drops[x] = 0;
+                    drops[x]++;
+                });
+            }
+            setInterval(drawMatrix, 50);
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+
+            const messageSets = [
+                ["ACCESS: UNAUTHORIZED", "SECURITY: BREACHED", "DEFENSES: PENETRATED"],
+                ["DATA: COMPROMISED", "NETWORK: VIOLATED", "CONTROL: LOST"],
+                ["ADMIN: OVERRIDDEN", "FIREWALL: DISABLED", "BACKUPS: DELETED"],
+                ["ENCRYPTION: FAILED", "LOGIN: BYPASSED", "SYSTEM: OWNED"]
+            ];
+            let currentSetIndex = 0;
+            setInterval(() => {
+                smallMessageElements.forEach(el => el.classList.remove('active'));
+                setTimeout(() => {
+                    const set = messageSets[currentSetIndex];
+                    set.forEach((msg, i) => {
+                        if (smallMessageElements[i]) smallMessageElements[i].textContent = msg;
+                    });
+                    smallMessageElements.forEach(el => el.classList.add('active'));
+                    currentSetIndex = (currentSetIndex + 1) % messageSets.length;
+                }, 500);
+            }, 4000);
+
+            setInterval(() => {
+                if (Math.random() > 0.95) {
+                    document.body.style.transition = 'transform 0.1s ease';
+                    document.body.style.transform = 'translate(2px, 1px)';
+                    setTimeout(() => document.body.style.transform = 'translate(0)', 100);
+                }
+            }, 5000);
+
+            document.oncontextmenu = () => false;
+            document.onselectstart = () => false;
+            document.onkeydown = (e) => {
+                if (e.ctrlKey || e.key === 'F12') return false;
+            };
+
+            document.addEventListener('click', (e) => {
+                const ripple = document.createElement('div');
+                ripple.style.position = 'fixed';
+                ripple.style.left = `${e.clientX}px`;
+                ripple.style.top = `${e.clientY}px`;
+                ripple.style.width = ripple.style.height = '0';
+                ripple.style.border = '2px solid #ff0000';
+                ripple.style.borderRadius = '50%';
+                ripple.style.transform = 'translate(-50%, -50%)';
+                ripple.style.pointerEvents = 'none';
+                ripple.style.boxShadow = '0 0 20px #ff0000';
+                document.body.appendChild(ripple);
+                ripple.animate([
+                    { width: '0', height: '0', opacity: 1 },
+                    { width: '300px', height: '300px', opacity: 0 }
+                ], { duration: 1000, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' });
+                setTimeout(() => ripple.remove(), 1000);
+            });
+        });
+    </script>
+</body>
+</html>
