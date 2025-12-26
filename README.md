@@ -6,9 +6,14 @@ These pages are created for **educational and design showcase purposes only** �
 
 <div align="center">
 
-| **Bloody 💀** | **Matrix 🟢** | **ScanLine ⚡** |
-|---------------|--------------|----------------|
-| <img src="https://github.com/user-attachments/assets/85c08d45-48ce-432e-ac18-90abc513d58c" width="300"/> | <img src="https://github.com/user-attachments/assets/a061464d-dedf-4e35-a71e-c2f88e606202" width="300"/> | <img src="https://github.com/user-attachments/assets/1bcc7131-f31e-444b-b1c7-8980706f303e" width="300"/> |
+**Bloody 💀**  
+![Bloody](https://github.com/user-attachments/assets/85c08d45-48ce-432e-ac18-90abc513d58c)
+
+**Matrix 🟢**  
+![Matrix](https://github.com/user-attachments/assets/a061464d-dedf-4e35-a71e-c2f88e606202)
+
+**ScanLine ⚡**  
+![ScanLine](https://github.com/user-attachments/assets/1bcc7131-f31e-444b-b1c7-8980706f303e)
 
 </div>
 
