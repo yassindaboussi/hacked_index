@@ -16,9 +16,9 @@ Here are quick previews of the included designs:
 
 ## Files 📂
 
-- `index1.html` — Red skull-themed defacement page ("Good Morning / Your system has been terminated") 💀
-- `index2.html` — Green matrix rain with typing messages ("HACKED BY XXX_XXX") 🟢
-- `index3.html` — Modern multi-color glitch with custom cursor and dynamic small messages ⚡
+- `Bloody.html` — Red skull-themed defacement page ("Good Morning / Your system has been terminated") 💀
+- `Matrix.html` — Green matrix rain with typing messages ("HACKED BY XXX_XXX") 🟢
+- `Scanline.html` — Modern multi-color glitch with custom cursor and dynamic small messages ⚡
 
 ## Usage ⚙️
 
